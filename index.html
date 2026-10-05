@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grille Tarifaire 2026 — Forbo DRV | Copilot</title>
+<title>Grille Tarifaire 2026 | Forbo Flooring Systems</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -23,7 +23,14 @@ header{background:linear-gradient(135deg,var(--forbo-dark) 0%,var(--forbo) 100%)
 .logo-mark{width:38px;height:38px;background:var(--forbo-accent);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .logo-mark svg{width:24px;height:24px;fill:var(--forbo-dark)}
 header h1{font-size:17px;font-weight:700;letter-spacing:-.2px;color:#fff}
-header h1 small{display:block;font-size:11px;font-weight:400;opacity:.7;letter-spacing:.3px;text-transform:uppercase}
+header h1 small{
+    display:block;
+    font-size:12px;
+    font-weight:500;
+    opacity:.9;
+    letter-spacing:0;
+    text-transform:none;
+}
 .hbadge{background:rgba(245,230,204,.35);border:1px solid rgba(245,230,204,.6);color:var(--forbo-accent);padding:4px 14px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
 .surcharge-bar{background:var(--forbo);padding:10px 32px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.1)}
 .surcharge-bar > span{font-size:11.5px;color:rgba(255,255,255,.7);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-right:2px;flex-shrink:0}
@@ -160,31 +167,37 @@ min-width:0;
     .forbo-logo{
         height:34px;
     }
-
 }
-.copilot-forbo-logo{background:#fff;border-radius:8px;padding:7px 13px 6px;min-width:126px;box-shadow:0 2px 8px rgba(0,0,0,.10);line-height:1;text-align:left}.forbo-word{color:#0067A0;font-weight:900;font-size:27px;letter-spacing:-2px;font-style:italic}.forbo-sub{color:#222;font-size:8px;font-weight:800;letter-spacing:1.15px;margin-top:4px}@media(max-width:600px){.copilot-forbo-logo{min-width:102px;padding:6px 9px}.forbo-word{font-size:22px}.forbo-sub{font-size:6.5px}}
 
+.footer-credit{
+    text-align:center;
+    padding:12px;
+    font-size:11px;
+    color:var(--text3);
+    border-top:1px solid var(--border);
+    margin-top:30px;
+}
 </style>
 </head>
 <body>
 <header>
 
- <div class="logo-wrap">
+<div class="logo-wrap">
 
-  <img src="forbo-logo.png"
-       alt="Forbo Flooring Systems"
-       class=" <small>Dernière mise à jour : 05/10/2026</small>
-      </h1>
-  </div>
+    <img src="forbo-logo.png"
+         alt="Forbo Flooring Systems"
+         class="forbo-logo">
+<div>
+    <h1>
+        Grille Tarifaire 2026
+        <small>Dernière mise à jour : 05/10/2026</small>
+    </h1>
+</div>
 
 </div>
 
-  <div>
-      <h1>
-          Grille Tarifaire >
-</div>
-  <div style="display:flex;align-items:center;gap:8px"><div class="hbadge" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:#fff">Copilot Edition</div><div class="hbadge" id="total-badge">— produits</div></div>
 </header>
+
 <div class="surcharge-bar">
   <span>Surcharge&nbsp;:</span>
   <button class="sbtn" id="btn-pvc" onclick="toggleSurcharge('pvc')">PVC &amp; Sol Souple <span class="stag">+5,5%</span></button>
@@ -1023,5 +1036,8 @@ function render(){
 
 render();
 </script>
+ <footer class="footer-credit">
+    Outil conçu et développé par Ludovic Aumont
+</footer>
 </body>
 </html>
