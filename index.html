@@ -644,7 +644,10 @@ var famMap = {};
 DATA.forEach(function(p){ famMap[p.famille] = (famMap[p.famille]||0)+1; });
 var familles = Object.keys(famMap).sort();
 
-document.getElementById("total-badge").textContent = DATA.length + " produits";
+var totalBadge = document.getElementById("total-badge");
+if(totalBadge){
+totalBadge.textContent = DATA.length + " produits";
+}
 
 document.getElementById("search").oninput = function(){
   var v = this.value.trim().toLowerCase();
