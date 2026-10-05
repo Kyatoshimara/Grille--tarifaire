@@ -146,18 +146,43 @@ min-width:0;
 #empty{display:none;text-align:center;padding:60px 20px;color:var(--text3)}
 #empty svg{width:48px;height:48px;margin:0 auto 12px;display:block;opacity:.3}
 @media(max-width:720px){header,.surcharge-bar{padding-left:16px;padding-right:16px}main{padding:14px}}
+.forbo-logo{
+    height:48px;
+    width:auto;
+    display:block;
+    background:#fff;
+    border-radius:6px;
+    padding:4px;
+}
 
+@media (max-width:720px){
+
+    .forbo-logo{
+        height:34px;
+    }
+
+}
 .copilot-forbo-logo{background:#fff;border-radius:8px;padding:7px 13px 6px;min-width:126px;box-shadow:0 2px 8px rgba(0,0,0,.10);line-height:1;text-align:left}.forbo-word{color:#0067A0;font-weight:900;font-size:27px;letter-spacing:-2px;font-style:italic}.forbo-sub{color:#222;font-size:8px;font-weight:800;letter-spacing:1.15px;margin-top:4px}@media(max-width:600px){.copilot-forbo-logo{min-width:102px;padding:6px 9px}.forbo-word{font-size:22px}.forbo-sub{font-size:6.5px}}
+
 </style>
 </head>
 <body>
 <header>
-  <div class="logo-wrap">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 7h12v4H3zm0 7h18v4H3z"/></svg>
-    </div>
-    <h1>Grille Tarifaire <small>Forbo Flooring Systems — v26 · développé avec Microsoft Copilot · mis à jour le 01/09/2026</small></h1>
+
+ <div class="logo-wrap">
+
+  <img src="forbo-logo.png"
+       alt="Forbo Flooring Systems"
+       class=" <small>Dernière mise à jour : 05/10/2026</small>
+      </h1>
   </div>
+
+</div>
+
+  <div>
+      <h1>
+          Grille Tarifaire >
+</div>
   <div style="display:flex;align-items:center;gap:8px"><div class="hbadge" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.32);color:#fff">Copilot Edition</div><div class="hbadge" id="total-badge">— produits</div></div>
 </header>
 <div class="surcharge-bar">
