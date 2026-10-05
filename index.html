@@ -168,7 +168,13 @@ min-width:0;
         height:34px;
     }
 }
-
+#back-to-gammes{
+    background:#fff;
+    border:2px solid #005B8F;
+    color:#005B8F;
+    font-weight:700;
+    margin-bottom:10px;
+}
 .footer-credit{
     text-align:center;
     padding:12px;
@@ -658,6 +664,61 @@ document.getElementById("search").oninput = function(){
   });
   render();
 };
+  document.querySelectorAll(".qg-btn[data-g]").forEach(function(btn){
+
+  btn.onclick = function(){
+
+    var gamme = btn.getAttribute("data-g");
+
+    document.getElementById("search").value = gamme.toLowerCase();
+
+    document.querySelectorAll(".qg-btn[data-g]").forEach(function(b){
+      b.style.display = "none";
+    });
+
+    btn.style.display = "inline-flex";
+
+    var backBtn = document.getElementById("back-to-gammes");
+
+    if(!backBtn){
+
+      backBtn = document.createElement("button");
+
+      backBtn.id = "back-to-gammes";
+      backBtn.className = "qg-btn";
+      backBtn.textContent = "← Retour aux gammes";
+
+      backBtn.onclick = function(){
+
+        document.getElementById("search").value = "";
+
+        document.querySelectorAll(".qg-btn[data-g]").forEach(function(b){
+          b.style.display = "inline-flex";
+          b.classList.remove("on");
+        });
+
+        backBtn.remove();
+
+        render();
+      };
+
+      document.getElementById("quick-gammes")
+              .insertBefore(
+                  backBtn,
+                  document.getElementById("quick-gammes").firstChild
+               );
+    }
+
+    render();
+
+    window.scrollTo({
+      top: document.getElementById("results").offsetTop - 20,
+      behavior: "smooth"
+    });
+
+  };
+
+});
 
 function buildCPVSelects(){
   Object.keys(CPV_DATA).forEach(function(sheetKey){
@@ -751,6 +812,8 @@ function toggleQuickGamme(name){
   var search = document.getElementById("search");
   var isActive = search.value.trim().toLowerCase() === name.toLowerCase();
   document.querySelectorAll(".qg-btn").forEach(function(b){ b.classList.remove("on"); });
+  
+
   accessoriesView = false; activeAccGroup = null;
   document.getElementById("qg-accessoires").classList.remove("on");
   if(isActive){
@@ -760,6 +823,21 @@ function toggleQuickGamme(name){
     if(QG_BUTTONS[name]) QG_BUTTONS[name].classList.add("on");
   }
   render();
+
+setTimeout(function(){
+
+    var results = document.getElementById("results");
+
+    if(results){
+
+        results.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+
+},150);
 }
 buildQuickGammes();
 
