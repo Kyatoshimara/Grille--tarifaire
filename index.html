@@ -97,7 +97,21 @@ main{max-width:980px;margin:0 auto;padding:24px;overflow-y:auto}
 .tl{font-size:10.5px;text-transform:uppercase;letter-spacing:.7px;color:var(--text3);font-weight:700;margin-bottom:10px}
 .tg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:10px}
 .ti:has(.tk:first-child){min-width:0}
-@media(max-width:720px){.tg{grid-template-columns:repeat(4,minmax(118px,1fr));overflow-x:auto;padding-bottom:5px}.ti{min-width:118px}}
+@media (max-width:720px){
+ 
+.tg{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;
+overflow:visible;
+padding-bottom:0;
+}
+ 
+.ti{
+min-width:0;
+}
+ 
+}
 .ti{background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:9px 12px}
 .ti.surcharge-on{border-color:rgba(181,69,27,.3);background:#FFF9F5}
 .ti.plat-tier{border-color:#b7a6cf;background:#ede7f6}
